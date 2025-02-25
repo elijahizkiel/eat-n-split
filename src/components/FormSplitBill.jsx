@@ -40,11 +40,11 @@ export default function FormSplitBill({ friend, setBalance }){
             <Btn onClick={()=>{
                 let balance;
                 if(billOnMe){
-                    balance = friend.balance - expense;
-                }else{
                     balance = friend.balance + expense;
+                }else{
+                    balance = friend.balance - expense;
                 }
-                console.log("friend balance: " + balance)
+                console.log("friend balance: " + balance, "\nbill is on me: "+billOnMe);
                 setBalance(friend.id, balance)
             }}>Split Bill</Btn>
         </form>

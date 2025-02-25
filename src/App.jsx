@@ -1,6 +1,5 @@
 import { useState } from "react";
 import FriendList from "./components/FriendList";
-import "./App.css";
 import FormAddFriend from "./components/FormAddFriend";
 import Btn from "./components/Btn";
 import FormSplitBill from "./components/FormSplitBill";
