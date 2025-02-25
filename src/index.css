@@ -3,6 +3,7 @@
   --color-light: #ffe8cc;
   --color-medium: #ffa94d;
   --color-dark: #ff922b;
+  --dark-grey: #495057;
 }
 
 * {
@@ -21,7 +22,7 @@ html {
 
 body {
   height:100vh;
-  color:#495057;
+  color:var(--dark-grey);
   display:flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +31,9 @@ body {
   display: grid;
   grid-template-columns: 2fr 3fr;
   column-gap: 3rem;
+  background-color: var(--color-lightest);
+  border-radius: 15px;
+  padding: 1rem;
 }
 /*.sidebar {
  
@@ -38,6 +42,7 @@ body {
   list-style: none;
 }
 .friend {
+  color: var(--dark-grey);
   margin: 5%;
   display: grid;
   column-gap: 0.9rem;
@@ -51,6 +56,8 @@ body {
 }
 
 .btn {
+  font-weight: 600;
+  color: var(--dark-grey);
   background-color:var(--color-dark);
   border-radius: 5px;
   max-height: fit-content; 

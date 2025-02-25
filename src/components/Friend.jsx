@@ -1,6 +1,6 @@
 /*eslint-disable react/prop-types */
 import Btn from "./Btn";
-export default function Friend({ id, name, image, balance }) {
+export default function Friend({ id, name, image, balance, onSelect }) {
   return (
     <li className="friend" id={id}>
       <img className="friend-img" src={image} />
@@ -18,7 +18,7 @@ export default function Friend({ id, name, image, balance }) {
           <p>You and {name} are even!</p>
         )}
       </div>
-      <Btn>Select</Btn>
+      <Btn onClick={()=>{onSelect(id)}}>Select</Btn>
       </li>
   );
 }

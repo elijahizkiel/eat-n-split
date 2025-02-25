@@ -2,14 +2,14 @@
 import Btn from "./Btn";
 import { useState } from "react";
 
-export default function FormSplitBill({ friend }){
-    const [billOn, setBillOn] = useState(true)
+export default function FormSplitBill({ friend, setBalance }){
+    const [billOnMe, setBillOnMe] = useState(true)
     const [expense, setExpense] = useState(0)
     const [billValue, setBillValue] = useState(0);
     const [myExpense, setMyExpense] =useState(0)
 
     return(
-        <form className="form-split-bill">
+        <form className="form-split-bill" onSubmit={(e)=>{e.preventDefault()}}>
             <h2 className="title"> Split Bill with {friend.name}</h2>
         
             <label>Bill value:</label>
@@ -31,13 +31,22 @@ export default function FormSplitBill({ friend }){
 
             <label>Who is paying the bill?</label>
             <select onChange={(e)=>{
-                setBillOn(e.target.value)
+                setBillOnMe(eval(e.target.value))
             }}>
-                <option value={true} selected={billOn}>Me</option>
+                <option value={true}>Me</option>
                 <option value={false}>{friend.name}</option>
             </select>
 
-            <Btn>Split Bill</Btn>
+            <Btn onClick={()=>{
+                let balance;
+                if(billOnMe){
+                    balance = friend.balance - expense;
+                }else{
+                    balance = friend.balance + expense;
+                }
+                console.log("friend balance: " + balance)
+                setBalance(friend.id, balance)
+            }}>Split Bill</Btn>
         </form>
     )
 }
