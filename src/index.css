@@ -12,7 +12,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 92.5%;
   font-family: system-ui, -apple-system, 
     BlinkMacSystemFont, 'Segoe UI', Roboto,
      Oxygen, Ubuntu, Cantarell, 
@@ -29,6 +29,7 @@ body {
 .app {
   display: grid;
   grid-template-columns: 2fr 3fr;
+  column-gap: 3rem;
 }
 /*.sidebar {
  
@@ -71,6 +72,7 @@ body {
   margin: 1rem;
   padding:1rem;
   border-radius: 5px;
+  text-align: left;
 }
 input {
   outline-color: var(--color-medium);
@@ -79,4 +81,27 @@ input {
 }
 .form-add-friend .btn {
   grid-area: 3/2;
+}
+
+.form-split-bill {
+  display:grid;
+  grid-template-columns: repeat(2,50%);
+  gap: 1rem;
+  text-align: left;
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.form-split-bill .title {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-transform: uppercase;
+  margin:1rem;
+}
+.form-split-bill input, select {
+  background-color: var(--color-lightest);
+}
+.form-split-bill .btn {
+  grid-area: 6/2;
 }
