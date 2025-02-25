@@ -26,5 +26,57 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.app {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+/*.sidebar {
  
+} */
+.friends-list {
+  list-style: none;
+}
+.friend {
+  margin: 5%;
+  display: grid;
+  column-gap: 0.9rem;
+  grid-template-columns: 1fr 5fr 2fr;
+  text-align: left;
+}
+.friend-img {
+  border-radius: 50%;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.btn {
+  background-color:var(--color-dark);
+  border-radius: 5px;
+  max-height: fit-content; 
+  border: 2px solid var(--color-dark) ;
+  padding: 0.2em;
+}
+.friend-balance {
+  grid-area: 2/2;
+}
+.friend .btn {
+  grid-area: 2/3 ;
+}
+
+.form-add-friend {
+  background-color: var(--color-light);
+  display: grid;
+  row-gap: 0.5rem;
+  grid-template-columns: repeat(2,50%);
+  margin: 1rem;
+  padding:1rem;
+  border-radius: 5px;
+}
+input {
+  outline-color: var(--color-medium);
+  border:none;
+  border-radius: 5px;
+}
+.form-add-friend .btn {
+  grid-area: 3/2;
+}

@@ -1,5 +1,5 @@
 /*eslint-disable react/prop-types */
-
+import Btn from "./Btn";
 export default function Friend({ id, name, image, balance }) {
   return (
     <li className="friend" id={id}>
@@ -8,16 +8,17 @@ export default function Friend({ id, name, image, balance }) {
       <div className="friend-balance">
         {balance < 0 ? (
           <p style={{ color: "red" }}>
-            You owe ${name} $${-1 * balance}
+            You owe {name} ${Math.abs(balance)}
           </p>
         ) : balance > 0 ? (
           <p style={{ color: "orange" }}>
-            {name} owes you $${balance}
+            {name} owes you ${balance}
           </p>
         ) : (
-          <p>You and ${name} are even!</p>
+          <p>You and {name} are even!</p>
         )}
       </div>
-    </li>
+      <Btn>Select</Btn>
+      </li>
   );
 }
